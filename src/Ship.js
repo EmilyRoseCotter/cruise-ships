@@ -7,10 +7,7 @@ class Ship {
   };
   
   setSail() {
-    const itinerary = this.itinerary;
-    const currentPortIndex = itinerary.ports.indexOf(this.currentPort);
-
-    if (currentPortIndex === (itinerary.ports.length -1)){
+    if (this.itinerary.ports.indexOf(this.currentPort) === (this.itinerary.ports.length -1)){
       throw new Error('End of itinterary reached');
     };
 
@@ -20,10 +17,9 @@ class Ship {
   };
 
   dock() {
-    const itinerary = this.itinerary;
-    const previousPortIndex = itinerary.ports.indexOf(this.previousPort);
-
-    this.currentPort = itinerary.ports[previousPortIndex + 1];
+    const previousPortIndex = this.itinerary.ports.indexOf(this.previousPort);
+    
+    this.currentPort = this.itinerary.ports[previousPortIndex + 1];
     this.currentPort.addShip(this);
   };
 };
