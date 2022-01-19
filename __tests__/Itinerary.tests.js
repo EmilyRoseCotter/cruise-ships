@@ -1,5 +1,5 @@
-const Itinerary = require("../src/Itinerary");
-const Port = require("../src/Port");
+const Itinerary = require("../src/itinerary");
+const Port = require("../src/port");
 
 describe('Itinerary', () => {
   let liverpool;
